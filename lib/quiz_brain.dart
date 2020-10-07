@@ -1,4 +1,6 @@
 import 'question.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:flutter/material.dart';
 
 class QuizBrain {
   int _questionNumber = 0;
@@ -46,5 +48,17 @@ class QuizBrain {
 
   bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
+  }
+
+  bool isFinishQuiz() {
+    if (_questionNumber >= _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    _questionNumber = 0;
   }
 }
